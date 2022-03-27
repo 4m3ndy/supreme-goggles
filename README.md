@@ -37,3 +37,8 @@ Additional information
 This is a Declarative Pipeline defined using Jenkinsfile (Groovy DSL), You need to defined a Pipeline job with:
 - repository `https://github.com/4m3ndy/supreme-goggles.git`
 - branch `main`
+
+## References
+* https://dev-notes.eu/2017/09/verify-and-setup-litecoin-core/
+* https://github.com/uphold/docker-litecoin-core
+* https://github.com/anchore/grype

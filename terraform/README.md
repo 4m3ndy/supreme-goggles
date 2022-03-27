@@ -1,12 +1,13 @@
 # aws-iam
 This Terraform module creates the following resources in IAM:
-• A role, with no permissions, which can be assumed by users within the same account,
-• A policy, allowing users / entities to assume the above role,
-• A group, with the above policy attached,
-• A user, belonging to the above group..
+* A role, with no permissions, which can be assumed by users within the same account,
+* A policy, allowing users / entities to assume the above role,
+* A group, with the above policy attached,
+* A user, belonging to the above group..
 
 ## Requirements
 - terraofrm >= 1.1.0
+- aws-cli >= 2.0
 
 ## How to run
 * Set the AWS credentials using `aws configure` under the profile name `default` in order to provision the required resources.
