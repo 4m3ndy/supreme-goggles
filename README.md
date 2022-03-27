@@ -8,7 +8,6 @@ This repository define a dockerized version of Litecoin node and How to deploy i
 - envsubst - for replacing environment variables defined in kubernetes manifests.
 - GNU Make - for running make targets
 
-
 ## How to run
 First you need to set the required environment variables to be used in `Makefile`
 ```bash
