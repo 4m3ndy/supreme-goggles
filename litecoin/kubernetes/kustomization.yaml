@@ -1,0 +1,11 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- k8s-ns.yaml
+- k8s-sa.yaml
+- k8s-sts.yaml
+namespace: litecoin
+commonLabels:
+  app: litecoin
+  version: ${LITECOIN_VERSION}

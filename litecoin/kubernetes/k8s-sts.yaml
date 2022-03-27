@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  namespace: litecoin
+  name: litecoin
+spec:
+  serviceName: litecoin
+  replicas: 1
+  template:
+    spec:
+      serviceAccountName: litecoin
+      securityContext:
+        runAsUser: 1001
+        fsGroup: 1001
+      containers:
+        - name: litecoin
+          image: ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}
+          imagePullPolicy: Always
+          volumeMounts:
+          - name: litecoin-data
+            mountPath: "/home/litecoin/.litecoin"
+          resources:
+            requests:
+              cpu: 0.5
+              memory: 1Gi
+            limits:
+              cpu: 1
+              memory: 4Gi
+          readinessProbe:
+            tcpSocket:
+              port: 9333
+            initialDelaySeconds: 5
+            timeoutSeconds: 10
+            periodSeconds: 5
+  volumeClaimTemplates:
+    - metadata:
+        name: litecoin-data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: default
+        resources:
+          requests:
+            storage: 10Gi
