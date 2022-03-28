@@ -21,7 +21,7 @@ LITECOIN_IMAGE_TAG?=v${LITECOIN_VERSION}
 | --- | --- |
 | `make build` | Builds the docker image of the Litecoin |
 | `make validate` | Scans container images for vulnerabilities, and show severity of each vulnerability |
-| `make push` | Pushes the docker image to the docker registry, Invoke it before `make validate` and `make push` |
+| `make push` | Pushes the docker image to the docker registry, Invoke it before `make validate` and `make build` |
 | `make deploy` | Deploys the kubernetes manifests to the kuberentes cluster |
 | `make all` | Build, Validate, Push and Deploy the Litecoin image |
 
